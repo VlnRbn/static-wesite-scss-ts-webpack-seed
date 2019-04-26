@@ -1,16 +1,15 @@
 <h1 align="center">
-<img width="40" valign="bottom" src="https://ultimateangular.com/assets/img/categories/typescript.svg">
-TypeScript: Masterclass Course Seed
+Webpack Seed: TS HTML SCSS STATIC SITE
 </h1>
-<h4 align="center">Project seed for our advanced TypeScript Masterclass course.</h4>
+<h4 align="center">Project seed for static site development using webpack.</h4>
 
 ---
 
-<a href="https://ultimateangular.com" target="_blank"><img src="https://ultimateangular.com/assets/img/banner.jpg"></a>
+<small>Here goes medium link<small>
 
 ---
 
-> This repo serves as the seed project for Ultimate Angular's TypeScript Masterclass course as well as the final solution in stepped branches, come and [learn TypeScript](https://ultimateangular.com/courses/) with us!
+> This repo serves as the guid to medium tutorial on setup webpack for static sites
 
 [Setup and install](#setup-and-install) | [Tasks](#tasks) |
 [Resources](#resources)
@@ -41,7 +40,7 @@ you'll need to `cd` into the directory that you cloned the repo into and run
 some quick tasks:
 
 ```
-cd <typescript-masterclass-seed>
+cd <repo-name>
 yarn install
 # OR
 npm install
@@ -76,6 +75,6 @@ npm start
 There are several resources used inside this course, of which you can read
 further about to dive deeper or understand in more detail what they are:
 
-* [TypeScript Docs](https://www.typescriptlang.org)
-* [TypeScript Playground](https://www.typescriptlang.org/play)
-* [AST Explorer](https://astexplorer.net)
+- [TypeScript Docs](https://www.typescriptlang.org)
+- [TypeScript Playground](https://www.typescriptlang.org/play)
+- [AST Explorer](https://astexplorer.net)
