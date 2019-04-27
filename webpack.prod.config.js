@@ -5,6 +5,7 @@ const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const config = require("./website.config");
 
 const entry = {};
@@ -31,7 +32,7 @@ module.exports = {
     ...entry
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "prod"),
     filename: "[name].[chunkhash].js"
   },
   module: {
@@ -42,7 +43,7 @@ module.exports = {
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          { loader: "css-loader", options: { url: false } },
           "postcss-loader",
           "sass-loader"
         ]
@@ -58,6 +59,7 @@ module.exports = {
       filename: "[name].[contenthash].css"
     }),
     ...htmlWebpackEntries,
+    new CopyWebpackPlugin([{ from: "src/assets", to: "assets" }]),
     new WebpackMd5Hash()
   ],
   devServer: {

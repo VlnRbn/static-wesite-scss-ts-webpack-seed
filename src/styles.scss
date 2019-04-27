@@ -13,3 +13,8 @@ body * {
   display: flex;
   color: $color;
 }
+
+.app {
+  background: url(./assets/main.jpg);
+  background-size: cover;
+}

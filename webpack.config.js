@@ -1,8 +1,9 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const WebpackMd5Hash = require("webpack-md5-hash");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const config = require("./website.config");
 
 const entry = {};
@@ -36,10 +37,21 @@ module.exports = {
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          { loader: "css-loader", options: { url: false } },
           "sass-loader"
         ]
       }
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {
+      //         outputPath: "assets"
+      //       }
+      //     }
+      //   ]
+      // }
     ]
   },
   plugins: [
@@ -48,6 +60,7 @@ module.exports = {
       filename: "[name].[contenthash].css"
     }),
     ...htmlWebpackEntries,
+    new CopyWebpackPlugin([{ from: "src/assets", to: "assets" }]),
     new WebpackMd5Hash()
   ],
   devServer: {
