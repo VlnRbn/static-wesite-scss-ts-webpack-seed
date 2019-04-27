@@ -39,7 +39,7 @@ module.exports = {
     rules: [
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
