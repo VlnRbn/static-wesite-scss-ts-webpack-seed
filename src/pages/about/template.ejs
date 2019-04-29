@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Webpack for static sites</title>
+    <title>about</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -16,36 +16,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
-    <!-- include css -->
     <link
       rel="stylesheet"
-      href="<%=htmlWebpackPlugin.files.chunks.index.css %>"
+      href="<%=htmlWebpackPlugin.files.chunks.about.css %>"
     />
   </head>
   <body>
-    <%= require('html-loader!./partials/nav.html') %>
-
-    <div class="app">hi thre im velen ruben aranha</div>
-
-    <img src="./assets/text/bg-img.jpg" alt="" />
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nulla fugit
-      maiores molestiae eaque culpa, ut quidem totam officiis praesentium
-      inventore quam, sint omnis laudantium nam pariatur in? Praesentium,
-      dignissimos!
-    </p>
-
-    <!-- <script src="./app.js"></script>
-      
-
-    <style src="./styles.css"></style> -->
-
-    <!-- <script src="app.js"></script> -->
-
-    <p>footer below</p>
-    <%= require('html-loader!./partials/footer.html') %>
+    <h1>this is all about me</h1>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -63,20 +40,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="<%= htmlWebpackPlugin.files.chunks.index.entry %>"></script>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
   </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Ultimate Angular: TypeScript Masterclass</title>
-    <link rel="stylesheet" href="./main.css" />
-  </head>
-
-
-  <body>
-
-  </body>
-</html> -->

@@ -15,7 +15,7 @@ for (const page of config) {
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: page.template,
+      template: "!!compile-ejs-loader!" + page.template,
       filename: page.filename
     })
   );
@@ -33,6 +33,10 @@ module.exports = {
     rules: [
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
       {
+        test: /\.(ejs)$/,
+        loader: "compile-ejs-loader"
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           "style-loader",
@@ -41,17 +45,6 @@ module.exports = {
           "sass-loader"
         ]
       }
-      // {
-      //   test: /\.(png|svg|jpg|gif)$/,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //       options: {
-      //         outputPath: "assets"
-      //       }
-      //     }
-      //   ]
-      // }
     ]
   },
   plugins: [
